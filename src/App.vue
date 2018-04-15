@@ -12,7 +12,6 @@ import movie from './components/movie.vue';
 import series from './components/series.vue';
 import logIn from './components/logIn.vue';
 
-
 export default {
     components: {
         'app-header': header,
@@ -36,6 +35,13 @@ export default {
 <style lang='scss'>
 @import '../node_modules/normalize.css/normalize.css'; 
 @import 'assets/scss/_variables'; 
+@import 'assets/scss/_vuetify'; 
+
+
+// vuetify 
+.expansion-panel__header {
+    padding: 0 10px 0 0 ;
+}
 
 // general
 html {
@@ -56,6 +62,10 @@ figure,
 figcaption {
     margin: 0;
     padding: 0;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 li {
@@ -81,15 +91,7 @@ input {
 }
 
 // buttons
-button {
-    background: transparent;
-    border: 0;
-    outline: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.btn {
+.moview-btn {
     background: $color-bg;
     padding: 15px 10px;
     border-radius: 50px;
@@ -157,9 +159,9 @@ button {
 }
 
 //footer
-.footer {
+.movie-footer {
     padding: 10px;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     color: rgba($color_text, .2)
 }

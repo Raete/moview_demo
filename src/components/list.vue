@@ -1,6 +1,6 @@
 <template><div>
     <app-header></app-header>
-    <div class="content"><!-- list_content -->
+    <div class="moview-content"><!-- list_content -->
         <div class="scroll"><!-- tags list -->
           <div v-for="tag in tags">
             <input  v-model="selectedCategory" type="radio" v-bind:id="tag.name" name="tags" v-bind:value="tag.name">
@@ -39,15 +39,6 @@
 // Imports
 import header from '../components/header.vue';
 
-class MovieItem {
-    constructor ( img, link, title, category ) {
-        this.img = img;
-        this.link = link;
-        this.title = title;
-        this.category = category;
-    }
-}
-
 // links store
 var movieLink = '/movie';
 var seriesLink = '/series';
@@ -72,180 +63,180 @@ export default {
             ],
 
             films: [
-                new MovieItem (
-                    require('../assets/img/posters/3.jpg'),
-                    movieLink, 
-                    '3%',
-                    'sci-fi',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/100.jpg'), 
-                    seriesLink,
-                    'The 100',
-                    'sci-fi',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/arrival.jpg'), 
-                    movieLink, 
-                    'Arrival',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/beauty_and_beast.jpg'), 
-                    movieLink, 
-                    'Beauty and the Beast',
-                    'romantic',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/best_offer.jpg'), 
-                    movieLink,
-                    'The Best Offer',
-                    'romantic',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/black_mirror.jpg'), 
-                    seriesLink,
-                    'Black Mirror',
-                    'sci-fi',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/breaking_bad.jpg'), 
-                    seriesLink,
-                    'Breaking Bad',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/dark.jpg'), 
-                    seriesLink,
-                    'Dark',
-                    'mystery',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/dexter.jpg'), 
-                    seriesLink,
-                    'Dexter',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/guardians.jpg'), 
-                    movieLink,
-                    'Guardians of the Galaxy Vol. 2',
-                    'sci-fi',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/hacksaw_ridge.jpg'), 
-                    movieLink,
-                    'Hacksaw Ridge',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/hangover.jpg'), 
-                    movieLink,
-                    'The Hangover',
-                    'comady',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/house.jpg'), 
-                    seriesLink,
-                    'House M.D.',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/houseofcards.jpg'), 
-                    seriesLink,
-                    'House of Cards',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/ides.jpg'), 
-                    movieLink,
-                    'The Ides of March',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/imitation_game.jpg'), 
-                    movieLink,
-                    'The Imitation Game',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/jigsaw.jpg'), 
-                    movieLink,
-                    'Jigsaw',
-                    'horror',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/jurassic_world.jpg'), 
-                    movieLink,
-                    'Jurassic World',
-                    'action',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/life.jpg'), 
-                    movieLink,
-                    'Life',
-                    'horror',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/little_prince.jpg'), 
-                    movieLink,
-                    'The Little Prince',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/mindhunter.jpg'), 
-                    seriesLink,
-                    'Mindhunter',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/narcos.jpg'), 
-                    seriesLink,
-                    'Narcos',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/never_let_me_go.jpg'), 
-                    movieLink,
-                    'Never Let Me Go',
-                    'romantic',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/oa.jpg'), 
-                    seriesLink,
-                    'The OA',
-                    'mystery',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/sherlock.jpg'), 
-                    seriesLink,
-                    'Sherlock',
-                    'drama',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/star_wars.jpg'), 
-                    movieLink,
-                    'Star Wars: The Last Jedi',
-                    'action',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/stranger_things.jpg'), 
-                    seriesLink,
-                    'Stranger Things',
-                    'horror',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/valerian.jpg'), 
-                    movieLink,
-                    'Valerian and the City of a Thousand Planets',
-                    'sci-fi',
-                ),
-                new MovieItem (
-                    require('../assets/img/posters/zootopia.jpg'), 
-                    movieLink,
-                    'Zootopia',
-                    'comady',
-                ),
+                {   
+                    img:        require('../assets/img/posters/3.jpg'),
+                    link:       seriesLink, 
+                    title:      '3%', 
+                    category:   'sci-fi',
+                },
+                {
+                    img:        require('../assets/img/posters/100.jpg'), 
+                    link:       seriesLink,
+                    title:      'The 100',
+                    category:   'sci-fi',
+                },
+                {
+                    img:         require('../assets/img/posters/arrival.jpg'), 
+                    link:        movieLink, 
+                    title:       'Arrival',
+                    category:    'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/beauty_and_beast.jpg'), 
+                    link:       movieLink, 
+                    title:      'Beauty and the Beast',
+                    category:   'romantic',
+                },
+                {
+                    img:        require('../assets/img/posters/best_offer.jpg'), 
+                    link:       movieLink,
+                    title:      'The Best Offer',
+                    category:   'romantic',
+                },
+                {
+                    img:        require('../assets/img/posters/black_mirror.jpg'), 
+                    link:       seriesLink,
+                    title:      'Black Mirror',
+                    category:   'sci-fi',
+                },
+                {
+                    img:        require('../assets/img/posters/breaking_bad.jpg'), 
+                    link:       seriesLink,
+                    title:      'Breaking Bad',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/dark.jpg'), 
+                    link:       seriesLink,
+                    title:      'Dark',
+                    category:   'mystery',
+                },
+                {
+                    img:        require('../assets/img/posters/dexter.jpg'), 
+                    link:       seriesLink,
+                    title:      'Dexter',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/guardians.jpg'), 
+                    link:       movieLink,
+                    title:      'Guardians of the Galaxy Vol. 2',
+                    category:   'sci-fi',
+                },
+                {
+                    img:        require('../assets/img/posters/hacksaw_ridge.jpg'), 
+                    link:       movieLink,
+                    title:      'Hacksaw Ridge',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/hangover.jpg'), 
+                    link:       movieLink,
+                    title:      'The Hangover',
+                    category:   'comady',
+                },
+                {
+                    img:        require('../assets/img/posters/house.jpg'), 
+                    link:       seriesLink,
+                    title:      'House M.D.',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/houseofcards.jpg'), 
+                    link:       seriesLink,
+                    title:      'House of Cards',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/ides.jpg'), 
+                    link:       movieLink,
+                    title:      'The Ides of March',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/imitation_game.jpg'), 
+                    link:       movieLink,
+                    title:      'The Imitation Game',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/jigsaw.jpg'), 
+                    link:       movieLink,
+                    title:      'Jigsaw',
+                    category:   'horror',
+                },
+                {
+                    img:        require('../assets/img/posters/jurassic_world.jpg'), 
+                    link:       movieLink,
+                    title:      'Jurassic World',
+                    category:   'action',
+                },
+                {
+                    img:        require('../assets/img/posters/life.jpg'), 
+                    link:       movieLink,
+                    title:      'Life',
+                    category:   'horror',
+                },
+                {
+                    img:        require('../assets/img/posters/little_prince.jpg'), 
+                    link:       movieLink,
+                    title:      'The Little Prince',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/mindhunter.jpg'), 
+                    link:       seriesLink,
+                    title:      'Mindhunter',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/narcos.jpg'), 
+                    link:       seriesLink,
+                    title:      'Narcos',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/never_let_me_go.jpg'), 
+                    link:       movieLink,
+                    title:      'Never Let Me Go',
+                    category:   'romantic',
+                },
+                {
+                    img:        require('../assets/img/posters/oa.jpg'), 
+                    link:       seriesLink,
+                    title:      'The OA',
+                    category:   'mystery',
+                },
+                {
+                    img:        require('../assets/img/posters/sherlock.jpg'), 
+                    link:       seriesLink,
+                    title:      'Sherlock',
+                    category:   'drama',
+                },
+                {
+                    img:        require('../assets/img/posters/star_wars.jpg'), 
+                    link:       movieLink,
+                    title:      'Star Wars: The Last Jedi',
+                    category:   'action',
+                },
+                {
+                    img:        require('../assets/img/posters/stranger_things.jpg'), 
+                    link:       seriesLink,
+                    title:      'Stranger Things',
+                    category:   'horror',
+                },
+                {
+                    img:        require('../assets/img/posters/valerian.jpg'), 
+                    link:       movieLink,
+                    title:      'Valerian and the City of a Thousand Planets',
+                    category:   'sci-fi',
+                },
+                {
+                    img:        require('../assets/img/posters/zootopia.jpg'), 
+                    link:       movieLink,
+                    title:      'Zootopia',
+                    category:   'comady',
+                },
             ],
 
             menuBottom: [
@@ -286,12 +277,11 @@ export default {
 // Imports
 @import '../assets/scss/_variables';
 
-.content {
+.moview-content {
     background: $color_bg--darken;
     position: relative;
     height: 100%;
 }
-
 
 // ITEMS WRAPPER
 .item_wrapper {

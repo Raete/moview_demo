@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="moview-content">
         <!--    FILM HEADER   -->
         <slot name="film-header"></slot>
 
@@ -36,7 +36,7 @@
 
                 </div><!-- END recommended items -->
             </div><!-- EDN recommended seciton -->
-            <aside class="footer">
+            <aside class="movie-footer">
                 Photo © IMDb
             </aside>
         </div> <!-- EDN single page content -->
@@ -271,6 +271,12 @@ export default {
 // Imports
 @import '../assets/scss/_variables';
 
+
+
+
+
+
+
 //image background
 .img_wrapper {
     position: relative;
@@ -410,7 +416,7 @@ export default {
 
 .content_synopsis {
     grid-area: content;
-    margin-top: 50px;
+    margin: 50px 0;
     padding: 5%;
     background: $color_text;
     color: $color_bg--darken;
@@ -504,6 +510,7 @@ export default {
         "items";
     justify-items: center;
     text-align: center;
+    margin-top: 50px;
 }
 
 .recommended {

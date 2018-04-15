@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="moview-container">
     <div class="top_logo_wrapper">
       <router-link to="/" exact class="top_logo">moview</router-link>
     </div>
@@ -28,7 +28,7 @@ export default {
 @import '../assets/scss/_variables';
  
 // TOP BAR
-.container {
+.moview-container {
     height: 100%;
     display: grid;
     grid-template-columns: auto 3fr;

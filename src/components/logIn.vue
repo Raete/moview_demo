@@ -8,21 +8,13 @@
                         <p class="log_form_name">Login</p>
                         <img class="logo" src="../assets//img/svg/logo.svg" alt=""><!-- animated logo -->
 
-                        <form class="log_form_wrapper" action="">
-                            <div key="a" class="input_wrapper"><!-- username input -->
-                                <img class="input_ico" src="../assets/img/svg/avatar.svg" alt="">
-                                <input type="text" placeholder="username" >
-                            </div>
-                            
-                            <div key="b" class="input_wrapper"><!-- password input -->
-                                <img class="input_ico" src="../assets/img/svg/key.svg" alt="">
-                                <input type="password" name="" id="" placeholder="password">
-                            </div>
+                        <v-form class="log_form_wrapper" action="">
+
+                            <v-text-field prepend-icon="person" name="login" label="email" type="text"></v-text-field>
+                            <v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
                         
-                            <router-link to="/list" exact class="btn btn--main"><!-- button -->
-                                enter
-                            </router-link>                      
-                        </form>
+                            <v-btn href="#/list" color="grey darken-4" round block > Log in </v-btn>                    
+                        </v-form>
                         <p class="sign_up_p">Don't have an account? <span v-on:click="showSignUp">Sign Up</span> </p>
                     </div>
                 </div><!-- END LOGIN FORM-->
@@ -37,28 +29,16 @@
                             <p class="log_form_name">Sing Up</p>
                         </div>
                     
-                        <img class="logo logo_logIn" src="../assets//img/svg/logo.svg" alt=""> <!-- animated logo -->
+                        <img class="logo" src="../assets//img/svg/logo.svg" alt=""> <!-- animated logo -->
 
-                        <form class="log_form_wrapper" action="">
-                            <div class="input_wrapper"><!-- username input -->
-                                <img class="input_ico" src="../assets/img/svg/avatar.svg" alt="">
-                                <input type="text" placeholder="username" >
-                            </div>
+                        <v-form class="log_form_wrapper" action="">
 
-                            <div class="input_wrapper"><!-- username input -->
-                                <img class="input_ico" src="../assets/img/svg/mail.svg" alt="">
-                                <input type="email" placeholder="email" >
-                            </div>
-
-                            <div class="input_wrapper"><!-- password input -->
-                                <img class="input_ico" src="../assets/img/svg/key.svg" alt="">
-                                <input type="password" name="" id="" placeholder="password">
-                            </div>
-
-                            <router-link to="/list" exact class="btn btn--main"><!-- button -->
-                                sing up
-                            </router-link>
-                        </form>
+                            <v-text-field prepend-icon="person" name="login" label="email" type="text"></v-text-field>
+                            <v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
+                        
+                            <v-btn href="#/list" color="grey darken-4" round block> Sing up </v-btn>        
+                                   
+                        </v-form>
                     
                     </div>
                 </div><!-- END  SING UP FORM-->
@@ -100,6 +80,11 @@ export default {
 
 <style lang='scss' scoped>
 @import '../assets/scss/_variables';
+
+
+
+
+
 // -- transition forms --
 .flip-enter-active {
   transition: all .8s ease;
@@ -182,7 +167,7 @@ export default {
 
 .logo {
     height: 70px;
-    margin: 80px 0 100px 0;
+    margin: 60px 0;
     border-radius: 15px 0 15px 0;
     &_logIn {
         margin: 85px 0;
