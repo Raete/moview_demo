@@ -47,7 +47,7 @@
             </v-tab>
 
             <!--    GALLERY TAB   -->
-            <v-tab-item  :id="'tab-2'" >
+            <v-tab-item class="tab_item"  :id="'tab-2'" >
                 <v-card flat>
                     <v-card-text >
                         <div class="content_gallery"> <!-- menu - gallery -->
@@ -60,7 +60,7 @@
                 </v-card>
             </v-tab-item>
             <!--    CASTING TAB   -->
-            <v-tab-item  :id="'tab-3'">
+            <v-tab-item class="tab_item"  :id="'tab-3'">
                 <v-card flat>
                     <v-card-text>
                         <div class="content_casting"> <!-- menu - casting -->
@@ -153,5 +153,6 @@ export default {
 // Imports
 @import '../assets/scss/_variables';
 @import '../assets/scss/_singlepage';
+
 
 </style>

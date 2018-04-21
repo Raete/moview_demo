@@ -1,18 +1,13 @@
 <template>
   <div class="moview-container">
+
     <div class="top_logo_wrapper">
       <router-link to="/" exact class="top_logo">moview</router-link>
     </div>
     
-    <div class="top_bar">
-      <div class="top_search">
-        <img class="top_search_ico" src="../assets/img/svg/search.svg" alt="">
-        <input type="text" placeholder="search">
-      </div>
-      <div class="top_profil">
+    <div class="top_profil">
         <img class="top_profil_ico" src="../assets/img/per1.jpg" alt="">
         <h2 class="top_profil_name">Samuel Green</h2>
-      </div>
     </div>
 
   </div>
@@ -30,30 +25,10 @@ export default {
 // TOP BAR
 .moview-container {
     height: 100%;
-    display: grid;
-    grid-template-columns: auto 3fr;
-    grid-template-rows: 60px;
-    grid-template-areas: 
-    "l t ";
-}
-// top bar -- mobil
-@media screen and (max-width: 700px) {
-    .container {
-        grid-template-rows: 60px 60px;
-        grid-template-areas: 
-        "l l "
-        "t t ";
-    }
-}
-
-.top_bar {
-    grid-area: t;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background: $color_bg--darken;
-    height: 60px;
-    padding: 0 .5em;
+    padding: 5px 0;
+
 }
 
 .top_logo_wrapper {
@@ -76,19 +51,7 @@ export default {
     border-radius: 10px 0 10px 0;
     border: 3px solid $color_text;
 }
-// search
-.top_search {
-    display: flex;
-    align-items: center;
-    width: 90%;
-    input {
-        width: 90%;
-    }
-    &_ico {
-        height: 15px;
-        margin-right: 10px;
-    }
-}
+
 // profil
 .top_profil {
     display: flex;

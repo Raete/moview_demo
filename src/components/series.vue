@@ -49,7 +49,7 @@
             </v-tab>
             
             <!--    SEASONS TAB   -->
-            <v-tab-item  :id="'tab-1'">
+            <v-tab-item class="tab_item" :id="'tab-1'">
                 <v-card flat>
                     <v-card-text>
                         <!--    EPISODES TABS   -->
@@ -172,7 +172,7 @@
                 </v-card>    
             </v-tab-item><!--    END SEASONS TAB   -->
             <!--    GALLERY TAB   -->
-            <v-tab-item  :id="'tab-2'" >
+            <v-tab-item class="tab_item" :id="'tab-2'" >
                 <v-card flat>
                     <v-card-text >
                         <div class="content_gallery"> <!-- menu - gallery -->
@@ -185,7 +185,7 @@
                 </v-card>
             </v-tab-item>
             <!--    CASTING TAB   -->
-            <v-tab-item  :id="'tab-3'">
+            <v-tab-item class="tab_item" :id="'tab-3'">
                 <v-card flat>
                     <v-card-text>
                         <div class="content_casting"> 
