@@ -17,14 +17,9 @@
     </div>
     
     <main class="moview-content">
-        <span>
-                    Filters:
-                </span>
+        <span> Filters: </span>
         <nav class="nav">
-            
             <menu class="nav__controls">
-
-
                 <li v-for="(active, menu) in menus" class="nav__label"
                 :class="{
                 'nav__label--active' : active,
@@ -34,9 +29,6 @@
                 </li>
 
                 <li class="nav__label nav__label--clear" @click="clearAllFilters">Clear all</li>
-
-                
-            
             </menu>
             <ul class="sort_buttons">
                 <li class="nav__label" @click="sortByName = !sortByName">sort by name</li> 
