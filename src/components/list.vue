@@ -28,7 +28,7 @@
                 {{ menu }}
                 </li>
 
-                <li class="nav__label nav__label--clear" @click="clearAllFilters">Clear all</li>
+                <div class="nav__label nav__label--clear" @click="clearAllFilters">Clear all</div>
             </menu>
             <ul class="sort_buttons">
                 <li class="nav__label" @click="sortByName = !sortByName">sort by name</li> 
@@ -920,6 +920,7 @@ export default {
             pointer-events: none;
             transition: all 275ms ease-in-out;
             border: 0;
+            display: block;
             &:hover {
                 border: 0;
                 color: transparentize($color_main, 0.5);
@@ -968,11 +969,11 @@ export default {
 .dropdown {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     position: relative;
     height: 0;
     overflow: hidden;
     transition: height 350ms;
-    margin: 0 auto;
     max-width: 88vw;
 // animations in menu
     &-enter,
@@ -1039,16 +1040,8 @@ export default {
         margin-top: 1rem;
     }
 }
-// CONTENT - LIST OF TV SHOWS
-.content__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    grid-row-gap: 20px;
-    margin: 20px auto 100px auto;
-    max-width: 90vw;
-    text-align: center;
-    justify-items: center;
-}
+
+
 // ITEMS WRAPPER
 .item_wrapper {
     display: grid;
@@ -1059,6 +1052,17 @@ export default {
     text-align: center;
     justify-items: center;
 }
+
+@media screen and (max-width: 700px) {
+    .item_wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+    .item {
+        width: 130px;
+    }
+
+}
+
 //single item
 .item {
     height: auto;
