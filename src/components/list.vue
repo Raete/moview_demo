@@ -24,7 +24,7 @@
                 :class="{
                 'nav__label--active' : active,
                 'nav__label--filter': activeFilters[menu].length
-                }" @click="setMenu(menu, active)">
+                }" @click="setMenu(menu, active)" :key="menu">
                 {{ menu }}
                 </li>
 
@@ -51,7 +51,7 @@
                 <template v-else>
                     <li v-for="(active, option) in options" class="filters__item"
                     :class="{ 'filters__item--active': active }"
-                    @click="setFilter(filter, option)">
+                    @click="setFilter(filter, option)" :key="option">
                     {{ option }}
                     </li>
                 </template>
