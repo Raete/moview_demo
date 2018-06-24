@@ -1,0 +1,119 @@
+//---- single pages (movie, series) style ----
+
+// SERIES HEADER - back icon
+.single_back {
+    z-index: 10;
+    grid-area: back;
+    align-self: center;
+    padding: 0 5%;
+    i {
+        font-size: 40px;
+        transition: 0.2s;
+        &:hover {
+            color: $color_main
+        }
+    }
+}
+
+//  TABS
+.tab_item {
+    margin-top: 20px;
+}
+
+.color_main {
+    background: $color_main
+}
+// SEASONS TAB - episodes
+.episode_item {
+    transition: .2s;
+    margin: 2px 0;
+    img {
+        height: 80px;
+        width: auto;
+    }
+    &:hover {
+        background: $color-bg;
+    }
+}
+
+.episode{
+    &_info_wrap {
+        grid-area: info;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &_info {
+        margin-left: 20px;
+        .info_title {
+            margin: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            span {
+                color: rgba($color_text, .3)
+            }
+        }
+        .info_date {
+            margin: 10px 0 0 0;
+            font-size: 12px;
+        }
+    }
+}
+
+// video 
+.video-wrapper {
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+    iframe {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+}
+
+// GALLERY TAB
+.content_gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 5px;
+    grid-auto-rows: auto;
+    img {
+        width: 100%;
+    }
+}
+// CASTING TAB
+.content_casting {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.casting_item {
+    position: relative;
+    .casting_name {
+        color: $color_main;
+        width: 200px;
+        h1 {
+            font-size: 40px;
+            margin-top: -50px;
+            margin-bottom: 0;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
+}
+
+.card__text {
+    padding: 0;
+}

@@ -7,11 +7,9 @@
             <div class="title_container">
                 <!--icons-->
                 <router-link to="/list" exact class="single_back">
-                    <img class="svg" src="../assets/img/svg/arrow.svg" alt="">
+                   <i class="material-icons">arrow_back</i>
                 </router-link>
-                <div class="single_play">
-                    <img src="../assets/img/svg/play.svg" alt="">
-                </div>
+               
                 <!--title section-->
                 <div class="title_content">
 
@@ -36,33 +34,36 @@
         <!--    END FILM HEADER   -->
 
         <!--    FILM TABLES (GALLLERY, CASTING, EPISODES)   -->
-        <div class="tabs" slot="film-tabs">
-            <ul class="tabs_menu menu--center"><!-- menu-->
-                <li>
-                    <button v-on:click="gallery" class="tabs_menu_item" v-bind:class="{active:galleryShow}" >
-                        <img class="svg" src="../assets/img/svg/image.svg" alt="">
-                        <span>Pictures</span>
-                    </button>
-                </li>
+        <v-tabs icons-and-text centered dark color="transparent"  slot="film-tabs">
+            <v-tabs-slider class="color_main"></v-tabs-slider>
 
-                <li>
-                    <button v-on:click="casting" class="tabs_menu_item" v-bind:class="{active:castingShow}">
-                        <img class="svg" src="../assets/img/svg/avatar.svg" alt="">
-                        <span>Casting</span> 
-                    </button>
-                </li>
-            </ul>
+            <v-tab href="#tab-2">
+                Pictures
+                <v-icon>crop_original</v-icon>
+            </v-tab>
+            <v-tab href="#tab-3">
+                Casting
+                <v-icon>person</v-icon>
+            </v-tab>
 
-            <!-- tab content - gallery-->
-            <div class="content_gallery tab_content" id="gallery" v-if= "galleryShow"> <!-- menu - gallery -->
-                <img src="../assets/img/gallery/bb01.jpg" alt="">
-                <img src="../assets/img/gallery/bb02.jpg" alt="">
-                <img src="../assets/img/gallery/bb03.jpg" alt="">
-                <img src="../assets/img/gallery/bb04.jpg" alt="">
-            </div>
-
-            <!-- tab content - casting-->
-            <div class="content_casting tab_content" id="casting" v-if= "castingShow"> <!-- menu - casting -->
+            <!--    GALLERY TAB   -->
+            <v-tab-item class="tab_item"  :id="'tab-2'" >
+                <v-card flat>
+                    <v-card-text >
+                        <div class="content_gallery"> <!-- menu - gallery -->
+                            <img src="../assets/img/gallery/bb01.jpg" alt="">
+                            <img src="../assets/img/gallery/bb02.jpg" alt="">
+                            <img src="../assets/img/gallery/bb03.jpg" alt="">
+                            <img src="../assets/img/gallery/bb04.jpg" alt="">
+                        </div>
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+            <!--    CASTING TAB   -->
+            <v-tab-item class="tab_item"  :id="'tab-3'">
+                <v-card flat>
+                    <v-card-text>
+                        <div class="content_casting"> <!-- menu - casting -->
                 <div class="casting_item">
                     <img src="../assets/img/casting/dan.jpg" alt="">
                     <div class="casting_name">
@@ -87,7 +88,14 @@
                     </div>
                 </div>
             </div><!-- END tab content - casting-->
-        </div><!-- END tab content-->
+
+                    </v-card-text>
+                </v-card>
+            </v-tab-item>
+            
+
+            
+        </v-tabs><!-- END tab content-->
         <!--    END FILM TABLES (GALLLERY, CASTING, EPISODES)   -->
     </single-page>
 </div> </template>
@@ -144,16 +152,7 @@ export default {
 <style lang='scss' scoped>
 // Imports
 @import '../assets/scss/_variables';
+@import '../assets/scss/_singlepage';
 
 
-// icon back
-.single_back {
-    z-index: 10;
-    grid-area: back;
-    align-self: center;
-    padding: 0 5%;
-    .svg {
-        height: 30px;
-    }
-}
 </style>

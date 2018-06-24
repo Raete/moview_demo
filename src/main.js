@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Routes from './routes'
 import Vuetify from 'vuetify'
+import _ from 'lodash'
  
 
 
@@ -11,6 +12,7 @@ import Vuetify from 'vuetify'
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(Vuetify);
+Vue.use(_);
 
 // Register routes
 const router = new VueRouter({
